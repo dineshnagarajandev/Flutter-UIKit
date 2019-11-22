@@ -11,6 +11,7 @@ import 'CustomWidgets/listviewcomponents.dart';
 
 void main() => runApp(MyApp());
 
+
 class MyApp extends StatelessWidget {
 
 final List<String> widgetNameArray = <String>['Text', 'Row', 'Coloumn', 'Stack', 'Container', 'Expanded', 'Scaffold', 'ListView'];
