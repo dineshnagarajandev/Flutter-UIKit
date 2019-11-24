@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'CustomWidgets/scafordcomponent.dart';
 
 import 'CustomWidgets/textcomponent.dart';
 import 'CustomWidgets/rowcomponent.dart';
 import 'CustomWidgets/coloumcomponent.dart';
 import 'CustomWidgets/stackcomponent.dart';
 import 'CustomWidgets/containercomponent.dart';
-import 'CustomWidgets/expandedcomponent.dart';
-import 'CustomWidgets/listviewcomponents.dart';
+import 'CustomWidgets/horizontal_listview_components.dart';
+import 'CustomWidgets/formcomponent.dart';
+
+import 'CustomWidgets/scafordcomponent.dart';
 
 void main() => runApp(MyApp());
-
-
 class MyApp extends StatelessWidget {
 
-final List<String> widgetNameArray = <String>['Text', 'Row', 'Coloumn', 'Stack', 'Container', 'Expanded', 'Scaffold', 'ListView'];
+final List<String> widgetNameArray = <String>['Text', 'Row', 'Coloumn', 'Stack', 'Container', 'Horizontal ListView', 'Form'];
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +25,7 @@ final List<String> widgetNameArray = <String>['Text', 'Row', 'Coloumn', 'Stack',
           ),
         ),
         body: ListView.separated(
+          physics: new AlwaysScrollableScrollPhysics(),
           padding: const EdgeInsets.all(0),
           itemCount: widgetNameArray.length,
           itemBuilder: (BuildContext context, int index) {
@@ -56,9 +56,9 @@ final List<String> widgetNameArray = <String>['Text', 'Row', 'Coloumn', 'Stack',
         "/ColoumComponent": (context) => ColoumComponent(),
         "/StackComponent": (context) => StackComponent(),
         "/ContainerComponent": (context) => ContainerComponent(),
-        "/ExpandedComponent": (context) => ExpandedComponent(),
+        "/FormComponent": (context) => FormComponent(),
         "/ScafordComponents": (context) => ScafordComponent(),
-        "/ListViewComponents": (context) => ListViewComponent()
+        "/HorizontalListViewComponents": (context) => HorizontalListViewComponent()
       },
     );
   }
@@ -87,16 +87,16 @@ void flutterBasicListViewTapped(String selectedWidget, BuildContext context, int
     Navigator.pushNamed(context, '/ContainerComponent');
     break;
     case 5: 
-    // Expanded component
-    Navigator.pushNamed(context, '/ExpandedComponent');
+    // Horizontal List View
+    Navigator.pushNamed(context, '/HorizontalListViewComponents');
     break;
     case 6: 
-    // Scaffold component
-    Navigator.pushNamed(context, '/ScafordComponents');
+    // Form component
+    Navigator.pushNamed(context, '/FormComponent');
     break;
     case 7: 
-    // ListView component
-    Navigator.pushNamed(context, '/ListViewComponents');
+    // Scaffold component
+    Navigator.pushNamed(context, '/ScafordComponents');
     break;
     default:
     Scaffold.of(context).showSnackBar(SnackBar(content: Text("Default case")));
