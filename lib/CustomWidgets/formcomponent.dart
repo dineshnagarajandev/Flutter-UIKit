@@ -28,16 +28,22 @@ class FormComponent extends StatelessWidget {
             Container(
               padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
               alignment: Alignment.center,
-              child: RaisedButton(
+              child: 
+              // AbsorbPointer(
+                // child: 
+                RaisedButton(
                 child: Text('Login'),
-                onPressed: () => {
-                  print('Login button pressed.')
-              },
+                onPressed: loginAction,
             ),
+              // ) 
             )
           ],
         ),
       ),
     );
   }
+}
+
+loginAction() {
+  print('Login action');
 }
