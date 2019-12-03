@@ -32,7 +32,7 @@ class FormComponent extends StatelessWidget {
               // AbsorbPointer(
                 // child: 
                 RaisedButton(
-                child: Text('Login Button'),
+                child: Text('Login'),
                 onPressed: loginAction,
             ),
               // ) 
