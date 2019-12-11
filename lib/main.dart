@@ -1,6 +1,7 @@
 // import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+// import 'package:http/http.dart' as http;
 
 import 'CustomWidgets/textcomponent.dart';
 import 'CustomWidgets/rowcomponent.dart';
@@ -24,7 +25,9 @@ class MyApp extends StatelessWidget {
     'Container',
     'Horizontal ListView',
     'Form',
-    'List With API Data'
+    'List With API Data',
+    'iOS AlertDialog',
+    'Material AlertDialog'
   ];
 
   @override
@@ -63,7 +66,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         floatingActionButton:
-            FloatingActionButton(child: Icon(Icons.add), onPressed: getData),
+            FloatingActionButton(child: Icon(Icons.add), onPressed: () => {}),
       ),
       routes: {
         "/TextComponent": (context) => TextComponent(),
@@ -75,14 +78,10 @@ class MyApp extends StatelessWidget {
         "/ScafordComponents": (context) => ScafordComponent(),
         "/HorizontalListViewComponents": (context) =>
             HorizontalListViewComponent(),
-            "/ListViewWithAPI": (context) => ListViewWithAPI()
+        "/ListViewWithAPI": (context) => ListViewWithAPI()
       },
     );
   }
-}
-
-getData() {
-  
 }
 
 void flutterBasicListViewTapped(
@@ -120,9 +119,71 @@ void flutterBasicListViewTapped(
       // API component
       Navigator.pushNamed(context, '/ListViewWithAPI');
       break;
+    case 8:
+      _iOSAlertInit(context);
+      break;
+    case 9:
+      _materialAlertInit(context);
+      break;
     default:
       Scaffold.of(context)
           .showSnackBar(SnackBar(content: Text("Default case")));
       break;
   }
+}
+
+_materialAlert(BuildContext context) {
+  return AlertDialog(
+    title: Text('Material Alert'),
+    content: Text('Android material designa alert'),
+    actions: <Widget>[
+      FlatButton(
+        child: Text('Yes'),
+        onPressed: () => {Navigator.pop(context)},
+      ),
+      FlatButton(
+        child: Text('No'),
+        onPressed: () => {Navigator.pop(context)},
+      )
+    ],
+    elevation: 24.0,
+    backgroundColor: Colors.white,
+  );
+}
+
+_iosAlert(BuildContext context) {
+  return CupertinoAlertDialog(
+    title: Text('Alert'),
+    content: Text("Are you sure about this alert?"),
+    actions: <Widget>[
+      CupertinoDialogAction(
+        child: Text("No"),
+        onPressed: () => {Navigator.pop(context)},
+      ),
+      CupertinoDialogAction(
+        child: Text("Yes"),
+        onPressed: () => {Navigator.pop(context)},
+      )
+    ],
+  );
+}
+
+Future<void> _iOSAlertInit(BuildContext context) async {
+  return showDialog<void>(
+    context: context,
+    barrierDismissible: false,
+    builder: (BuildContext context) {
+      return _iosAlert(context);
+    },
+  );
+}
+
+Future<void> _materialAlertInit(BuildContext context) async {
+  return showDialog<void>(
+    context: context,
+    barrierDismissible: false,
+    builder: (BuildContext context) {
+      return _materialAlert(context);
+    },
+  );
 }
