@@ -11,8 +11,9 @@ import 'CustomWidgets/containercomponent.dart';
 import 'CustomWidgets/horizontal_listview_components.dart';
 import 'CustomWidgets/formcomponent.dart';
 import 'CustomWidgets/ListViewWithAPI.dart';
-
+import 'CustomWidgets/alignclass.dart';
 import 'CustomWidgets/scafordcomponent.dart';
+import 'CustomWidgets/appbarclass.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,7 +28,9 @@ class MyApp extends StatelessWidget {
     'Form',
     'List With API Data',
     'iOS AlertDialog',
-    'Material AlertDialog'
+    'Material AlertDialog',
+    'Align Widget',
+    'AppBar',
   ];
 
   @override
@@ -78,7 +81,9 @@ class MyApp extends StatelessWidget {
         "/ScafordComponents": (context) => ScafordComponent(),
         "/HorizontalListViewComponents": (context) =>
             HorizontalListViewComponent(),
-        "/ListViewWithAPI": (context) => ListViewWithAPI()
+        "/ListViewWithAPI": (context) => ListViewWithAPI(),
+        "/AlignClass": (context) => AlignClass(),
+        "/AppBarClass": (context) => AppBarClass()
       },
     );
   }
@@ -125,47 +130,19 @@ void flutterBasicListViewTapped(
     case 9:
       _materialAlertInit(context);
       break;
+    case 10:
+      Navigator.pushNamed(context, '/AlignClass');
+      break;
+    case 11:
+      Navigator.pushNamed(context, '/AppBarClass');
+      break;
+    case 12:
+      break;
     default:
       Scaffold.of(context)
           .showSnackBar(SnackBar(content: Text("Default case")));
       break;
   }
-}
-
-_materialAlert(BuildContext context) {
-  return AlertDialog(
-    title: Text('Material Alert'),
-    content: Text('Android material designa alert'),
-    actions: <Widget>[
-      FlatButton(
-        child: Text('Yes'),
-        onPressed: () => {Navigator.pop(context)},
-      ),
-      FlatButton(
-        child: Text('No'),
-        onPressed: () => {Navigator.pop(context)},
-      )
-    ],
-    elevation: 24.0,
-    backgroundColor: Colors.white,
-  );
-}
-
-_iosAlert(BuildContext context) {
-  return CupertinoAlertDialog(
-    title: Text('Alert'),
-    content: Text("Are you sure about this alert?"),
-    actions: <Widget>[
-      CupertinoDialogAction(
-        child: Text("No"),
-        onPressed: () => {Navigator.pop(context)},
-      ),
-      CupertinoDialogAction(
-        child: Text("Yes"),
-        onPressed: () => {Navigator.pop(context)},
-      )
-    ],
-  );
 }
 
 Future<void> _iOSAlertInit(BuildContext context) async {
@@ -185,5 +162,49 @@ Future<void> _materialAlertInit(BuildContext context) async {
     builder: (BuildContext context) {
       return _materialAlert(context);
     },
+  );
+}
+
+_materialAlert(BuildContext context) {
+  return AlertDialog(
+    title: Text('Material Alert'),
+    content: Text('Android material designa alert'),
+    actions: <Widget>[
+      FlatButton(
+        child: Text('Yes'),
+        onPressed: () {
+          Navigator.pop(context);
+        },
+      ),
+      FlatButton(
+        child: Text('No'),
+        onPressed: () {
+          Navigator.pop(context);
+        },
+      )
+    ],
+    elevation: 24.0,
+    backgroundColor: Colors.white,
+  );
+}
+
+_iosAlert(BuildContext context) {
+  return CupertinoAlertDialog(
+    title: Text('Alert'),
+    content: Text("Are you sure about this alert?"),
+    actions: <Widget>[
+      CupertinoDialogAction(
+        child: Text("No"),
+        onPressed: () {
+          Navigator.pop(context);
+        },
+      ),
+      CupertinoDialogAction(
+        child: Text("Yes"),
+        onPressed: () {
+          Navigator.pop(context);
+        },
+      )
+    ],
   );
 }
