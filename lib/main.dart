@@ -15,6 +15,8 @@ import 'CustomWidgets/alignclass.dart';
 import 'CustomWidgets/scafordcomponent.dart';
 import 'CustomWidgets/appbarclass.dart';
 
+import 'WhatsApp/WhatsAppHome.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -31,6 +33,7 @@ class MyApp extends StatelessWidget {
     'Material AlertDialog',
     'Align Widget',
     'AppBar',
+    'Whats App'
   ];
 
   @override
@@ -83,7 +86,8 @@ class MyApp extends StatelessWidget {
             HorizontalListViewComponent(),
         "/ListViewWithAPI": (context) => ListViewWithAPI(),
         "/AlignClass": (context) => AlignClass(),
-        "/AppBarClass": (context) => AppBarClass()
+        "/AppBarClass": (context) => AppBarClass(),
+        "/WhatsAppHome": (context) => WhatsAppHome()
       },
     );
   }
@@ -137,6 +141,7 @@ void flutterBasicListViewTapped(
       Navigator.pushNamed(context, '/AppBarClass');
       break;
     case 12:
+      Navigator.pushNamed(context, '/WhatsAppHome');
       break;
     default:
       Scaffold.of(context)

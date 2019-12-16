@@ -1,0 +1,34 @@
+{
+    "message": [
+      {
+        "username": "User 1",
+        "recent-message": "Good night",
+        "user-image": "https://picsum.photos/id/126/200/300",
+        "message-time": "1576453163"
+      },
+      {
+        "username": "User 2",
+        "recent-message": "Good night",
+        "user-image": "https://picsum.photos/id/126/200/300",
+        "message-time": "1576453163"
+      },
+      {
+        "username": "User 3",
+        "recent-message": "Good night",
+        "user-image": "https://picsum.photos/id/126/200/300",
+        "message-time": "1576453163"
+      },
+      {
+        "username": "User 4",
+        "recent-message": "Good night",
+        "user-image": "https://picsum.photos/id/126/200/300",
+        "message-time": "1576453163"
+      },
+      {
+        "username": "User 5",
+        "recent-message": "Good night",
+        "user-image": "https://picsum.photos/id/126/200/300",
+        "message-time": "1576453163"
+      }
+    ]
+  }
