@@ -21,4 +21,4 @@ Includes basic flutter widget components and simple UI designes for reference pu
 12. App Bar with state full widget
 
 # Clone design
-1. What's app design clone
+1. What's app UI clone
