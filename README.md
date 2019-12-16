@@ -7,7 +7,7 @@ Includes basic flutter widget components and simple UI designes for reference pu
 # Basic widgets
 1. Text widget 
 2. Row widget 
-3. Coloumn widget
+3. Column widget
 4. Stack widget
 5. Container widget
 6. Horizontal listview sample
