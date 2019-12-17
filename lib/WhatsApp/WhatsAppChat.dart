@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/WhatsApp/CallInfo.dart';
+import 'package:my_app/WhatsApp/chatConversation.dart';
 
-whatsAppListContainer() {
+whatsAppListContainer(BuildContext context) {
   return Scaffold(
     body: ListView.builder(
       itemCount: 5,
@@ -46,18 +48,18 @@ whatsAppListContainer() {
             ),
             onTap: () {
               print('object $index');
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ChatConversation()));
             },
           ),
         );
       },
     ),
     floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.message),
-        backgroundColor: Colors.green,
-        onPressed: () {
-
-        },
-      ),
+      child: Icon(Icons.message),
+      backgroundColor: Colors.green,
+      onPressed: () {},
+    ),
   );
 }
 
@@ -86,21 +88,22 @@ whatsAppStatuContainer() {
   );
 }
 
-whatsAppCallsContainer() {
+whatsAppCallsContainer(BuildContext context) {
   return Scaffold(
-    body: ListView.builder(
-      itemCount: 10,
-      itemBuilder: (BuildContext context, int index) {
-        return Padding(
-          padding: EdgeInsets.all(2),
-          child: Container(
-            height: 80,
-            color: Colors.white,
-            child: Row(
-              children: <Widget>[
+    body: GestureDetector(
+      child: ListView.builder(
+        itemCount: 10,
+        itemBuilder: (BuildContext context, int index) {
+          return Padding(
+            padding: EdgeInsets.all(2),
+            child: Container(
+              height: 80,
+              color: Colors.white,
+              child: Row(children: <Widget>[
                 CircleAvatar(
                   radius: 30,
-                  backgroundImage: NetworkImage('https://via.placeholder.com/150'),
+                  backgroundImage:
+                      NetworkImage('https://via.placeholder.com/150'),
                 ),
                 Expanded(
                   child: Container(
@@ -109,21 +112,35 @@ whatsAppCallsContainer() {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text('User name', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),
-                        Text('Call time', style: TextStyle(fontWeight: FontWeight.normal, fontSize: 14),),
+                        Text(
+                          'User name',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 16),
+                        ),
+                        Text(
+                          'Call time',
+                          style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontSize: 14,
+                              color: Colors.grey),
+                        ),
                       ],
                     ),
                   ),
                 ),
                 IconButton(
-                    color: Colors.green,
-                    icon: Icon(Icons.call),
-                    onPressed: () {},
-                  ),
-              ]
+                  color: Colors.green,
+                  icon: Icon(Icons.call),
+                  onPressed: () {},
+                ),
+              ]),
             ),
-          ),
-        );
+          );
+        },
+      ),
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => CallInfo()));
       },
     ),
     floatingActionButton: Column(

@@ -53,9 +53,9 @@ class _WhatsAppHome extends State<WhatsAppHome> {
         body: TabBarView(
           children: <Widget>[
             Text('Camera'),
-            whatsAppListContainer(),
+            whatsAppListContainer(context),
             whatsAppStatuContainer(),
-            whatsAppCallsContainer()
+            whatsAppCallsContainer(context)
           ],
         ),
       ),

@@ -1,6 +1,7 @@
 // import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/WhatsApp/CallInfo.dart';
 // import 'package:http/http.dart' as http;
 
 import 'CustomWidgets/textcomponent.dart';
@@ -87,7 +88,8 @@ class MyApp extends StatelessWidget {
         "/ListViewWithAPI": (context) => ListViewWithAPI(),
         "/AlignClass": (context) => AlignClass(),
         "/AppBarClass": (context) => AppBarClass(),
-        "/WhatsAppHome": (context) => WhatsAppHome()
+        "/WhatsAppHome": (context) => WhatsAppHome(),
+        "/CallInfo": (context) => CallInfo()
       },
     );
   }
