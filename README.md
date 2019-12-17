@@ -5,6 +5,7 @@ Just a basic flutter explore repository for self learning purpose.
 Includes basic flutter widget components and simple UI designes for reference purpose.
 
 ![Initial Screen](https://github.com/dineshn19/Flutter-Basic/blob/master/assets/fonts/screenshots/FrontView.png)
+<img src="https://github.com/dineshn19/Flutter-Basic/blob/master/assets/fonts/screenshots/FrontView.png" width="200">
 
 # Basic widgets
 1. Text widget 
