@@ -4,6 +4,8 @@ Just a basic flutter explore repository for self learning purpose.
 
 Includes basic flutter widget components and simple UI designes for reference purpose.
 
+![Initial Screen](https://github.com/dineshn19/Flutter-Basic/blob/master/assets/fonts/screenshots/FrontView.png)
+
 # Basic widgets
 1. Text widget 
 2. Row widget 
@@ -19,4 +21,5 @@ Includes basic flutter widget components and simple UI designes for reference pu
 12. App Bar with state full widget
 
 # Clone design
-1. What's app design clone
+1. What's app UI clone
+![What's App Home](https://github.com/dineshn19/Flutter-Basic/blob/master/assets/fonts/screenshots/WhatsApp.png)
