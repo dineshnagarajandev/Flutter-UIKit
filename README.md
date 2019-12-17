@@ -5,6 +5,9 @@ Just a basic flutter explore repository for self learning purpose.
 Includes basic flutter widget components and simple UI designes for reference purpose.
 
 <img src="https://github.com/dineshn19/Flutter-Basic/blob/master/assets/fonts/screenshots/FrontView.png" width="200">
+<img src="https://github.com/dineshn19/Flutter-Basic/blob/master/assets/fonts/screenshots/FrontView.png" width="200">
+<img src="https://github.com/dineshn19/Flutter-Basic/blob/master/assets/fonts/screenshots/FrontView.png" width="200">
+<img src="https://github.com/dineshn19/Flutter-Basic/blob/master/assets/fonts/screenshots/FrontView.png" width="200">
 
 # Basic widgets
 1. Text widget 
@@ -22,4 +25,4 @@ Includes basic flutter widget components and simple UI designes for reference pu
 
 # Clone design
 1. What's app UI clone
-![What's App Home](https://github.com/dineshn19/Flutter-Basic/blob/master/assets/fonts/screenshots/WhatsApp.png)
+<img src="https://github.com/dineshn19/Flutter-Basic/blob/master/assets/fonts/screenshots/WhatsApp.png" width="200">
