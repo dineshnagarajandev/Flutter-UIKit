@@ -4,7 +4,7 @@ Just a basic flutter explore repository for self learning purpose.
 
 Includes basic flutter widget components and simple UI designes for reference purpose.
 
-<img src="https://github.com/dineshn19/Flutter-Basic/blob/master/assets/fonts/screenshots/FrontView.png" width="200"><img src="https://github.com/dineshn19/Flutter-Basic/blob/master/assets/fonts/screenshots/Form.png" width="200"><img src="https://github.com/dineshn19/Flutter-Basic/blob/master/assets/fonts/screenshots/AppBar.png"><img src="https://github.com/dineshn19/Flutter-Basic/blob/master/assets/fonts/screenshots/Alert-iOS.png" width="200">
+<img src="https://github.com/dineshn19/Flutter-Basic/blob/master/assets/fonts/screenshots/FrontView.png" width="200"><img src="https://github.com/dineshn19/Flutter-Basic/blob/master/assets/fonts/screenshots/Form.png" width="200"><img src="https://github.com/dineshn19/Flutter-Basic/blob/master/assets/fonts/screenshots/AppBar.png" width="200"><img src="https://github.com/dineshn19/Flutter-Basic/blob/master/assets/fonts/screenshots/Alert-iOS.png" width="200">
 
 # Basic widgets
 1. Text widget 
