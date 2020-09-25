@@ -1,6 +1,6 @@
 # Flutter-Basic
 
-Just a basic flutter explore repository for self learning purpose.
+Flutter and dart explore repository for self learning purpose.
 
 Includes basic flutter widget components and simple UI designes for reference purpose.
 
