@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/WhatsApp/Calls/WhatsAppCall.dart';
 import 'package:my_app/WhatsApp/Status/WhatsAppStatus.dart';
 import 'package:my_app/WhatsApp/WhatsAppEnums.dart';
 import 'WhatsAppChat.dart';
@@ -111,7 +112,7 @@ class _WhatsAppHome extends State<WhatsAppHome> {
             Text('Camera'),
             whatsAppListContainer(context),
             WhatsAppStatus(),
-            whatsAppCallsContainer(context)
+            WhatsAppCall()
           ],
         ),
       ),
