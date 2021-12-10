@@ -22,6 +22,7 @@ class _WhatsAppCallState extends State<WhatsAppCall> {
                 height: 80,
                 color: Colors.white,
                 child: Row(children: <Widget>[
+                  SizedBox(width: 10),
                   CircleAvatar(
                     radius: 30,
                     backgroundImage:
