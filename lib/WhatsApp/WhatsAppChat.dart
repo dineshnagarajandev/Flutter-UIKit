@@ -63,31 +63,6 @@ whatsAppListContainer(BuildContext context) {
   );
 }
 
-whatsAppStatuContainer() {
-  return Scaffold(
-    body: Text('Status'),
-    floatingActionButton: Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: <Widget>[
-        FloatingActionButton(
-          child: Icon(Icons.create),
-          backgroundColor: Colors.grey,
-          onPressed: () {},
-        ),
-        Divider(
-          color: Colors.white,
-        ),
-        FloatingActionButton(
-          child: Icon(Icons.camera_alt),
-          backgroundColor: Colors.green,
-          onPressed: () {},
-        ),
-      ],
-    ),
-  );
-}
-
 whatsAppCallsContainer(BuildContext context) {
   return Scaffold(
     body: GestureDetector(
