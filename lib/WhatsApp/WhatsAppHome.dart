@@ -44,61 +44,64 @@ class _WhatsAppHome extends State<WhatsAppHome> with TickerProviderStateMixin {
               ),
               onPressed: _searchNavBtnAction(),
             ),
-            PopupMenuButton<TopNavbarMoreOption>(
-                child: Icon(
-                  Icons.more_vert,
-                  color: Colors.white,
-                ),
-                itemBuilder: (context) => [
-                      PopupMenuItem(
-                        value: TopNavbarMoreOption.newgroup,
-                        child: Text('New group'),
-                      ),
-                      PopupMenuItem(
-                        value: TopNavbarMoreOption.newbroadcast,
-                        child: Text('New broadcast'),
-                      ),
-                      PopupMenuItem(
-                        value: TopNavbarMoreOption.linkeddevices,
-                        child: Text('Linked devices'),
-                      ),
-                      PopupMenuItem(
-                        value: TopNavbarMoreOption.starredmessages,
-                        child: Text('Starred messages'),
-                      ),
-                      PopupMenuItem(
-                        value: TopNavbarMoreOption.payments,
-                        child: Text('Payments'),
-                      ),
-                      PopupMenuItem(
-                        value: TopNavbarMoreOption.settings,
-                        child: Text('Settings'),
-                      ),
-                    ],
-                onSelected: (selectedValue) {
-                  switch (selectedValue) {
-                    case TopNavbarMoreOption.newgroup:
-                      print('New group');
-                      break;
-                    case TopNavbarMoreOption.newbroadcast:
-                      print('New broadcast');
-                      break;
-                    case TopNavbarMoreOption.linkeddevices:
-                      print('Linked devices');
-                      break;
-                    case TopNavbarMoreOption.starredmessages:
-                      print('Starred messages');
-                      break;
-                    case TopNavbarMoreOption.payments:
-                      print('Payments');
-                      break;
-                    case TopNavbarMoreOption.settings:
-                      print('Settings');
-                      break;
-                    default:
-                      print('Default');
-                  }
-                })
+            Container(
+              padding: EdgeInsets.only(right: 10),
+              child: PopupMenuButton<TopNavbarMoreOption>(
+                  child: Icon(
+                    Icons.more_vert,
+                    color: Colors.white,
+                  ),
+                  itemBuilder: (context) => [
+                        PopupMenuItem(
+                          value: TopNavbarMoreOption.newgroup,
+                          child: Text('New group'),
+                        ),
+                        PopupMenuItem(
+                          value: TopNavbarMoreOption.newbroadcast,
+                          child: Text('New broadcast'),
+                        ),
+                        PopupMenuItem(
+                          value: TopNavbarMoreOption.linkeddevices,
+                          child: Text('Linked devices'),
+                        ),
+                        PopupMenuItem(
+                          value: TopNavbarMoreOption.starredmessages,
+                          child: Text('Starred messages'),
+                        ),
+                        PopupMenuItem(
+                          value: TopNavbarMoreOption.payments,
+                          child: Text('Payments'),
+                        ),
+                        PopupMenuItem(
+                          value: TopNavbarMoreOption.settings,
+                          child: Text('Settings'),
+                        ),
+                      ],
+                  onSelected: (selectedValue) {
+                    switch (selectedValue) {
+                      case TopNavbarMoreOption.newgroup:
+                        print('New group');
+                        break;
+                      case TopNavbarMoreOption.newbroadcast:
+                        print('New broadcast');
+                        break;
+                      case TopNavbarMoreOption.linkeddevices:
+                        print('Linked devices');
+                        break;
+                      case TopNavbarMoreOption.starredmessages:
+                        print('Starred messages');
+                        break;
+                      case TopNavbarMoreOption.payments:
+                        print('Payments');
+                        break;
+                      case TopNavbarMoreOption.settings:
+                        print('Settings');
+                        break;
+                      default:
+                        print('Default');
+                    }
+                  }),
+            )
           ],
           bottom: TabBar(
             controller: _tabController,
