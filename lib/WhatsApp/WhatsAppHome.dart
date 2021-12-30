@@ -8,7 +8,20 @@ class WhatsAppHome extends StatefulWidget {
   _WhatsAppHome createState() => _WhatsAppHome();
 }
 
-class _WhatsAppHome extends State<WhatsAppHome> {
+class _WhatsAppHome extends State<WhatsAppHome> with TickerProviderStateMixin {
+  TabController _tabController;
+  @override
+  void initState() {
+    super.initState();
+    _tabController = new TabController(length: 4, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -88,14 +101,12 @@ class _WhatsAppHome extends State<WhatsAppHome> {
                 })
           ],
           bottom: TabBar(
+            controller: _tabController,
             isScrollable: true,
             indicatorColor: Colors.white,
             tabs: [
               Tab(
-                icon: IconButton(
-                  icon: Icon(Icons.camera_alt),
-                  onPressed: () {},
-                ),
+                icon: Icon(Icons.camera_alt),
               ),
               Tab(
                 text: "CHATS",
@@ -110,7 +121,8 @@ class _WhatsAppHome extends State<WhatsAppHome> {
           ),
         ),
         body: TabBarView(
-          children: <Widget>[
+          controller: _tabController,
+          children: [
             Text('Camera'),
             WhatsAppChat(),
             WhatsAppStatus(),
