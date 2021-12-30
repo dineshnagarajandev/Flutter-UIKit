@@ -48,7 +48,7 @@ class _WhatsAppStatusState extends State<WhatsAppStatus> {
                                       color: Colors.green,
                                       borderRadius: BorderRadius.circular(15),
                                       border: Border.all(
-                                          color: Colors.white, width: 1)),
+                                          color: Colors.white, width: 2)),
                                   child: Icon(Icons.add, color: Colors.white)),
                             )
                           ],
@@ -79,9 +79,54 @@ class _WhatsAppStatusState extends State<WhatsAppStatus> {
                         ),
                       ],
                     ))
-                : Container();
+                : Container(
+                    color: Colors.grey[100],
+                    height: 80,
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Container(
+                          width: 60,
+                          height: 60,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30)),
+                          child: CircleAvatar(
+                            radius: 30.0,
+                            backgroundImage:
+                                NetworkImage('https://via.placeholder.com/150'),
+                            backgroundColor: Colors.lightBlueAccent,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              "User Name",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 16),
+                            ),
+                            SizedBox(
+                              height: 6,
+                            ),
+                            Text(
+                              "10 minutes ago",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.normal, fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ));
           },
-          itemCount: 1),
+          itemCount: 10),
       floatingActionButton: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.end,
