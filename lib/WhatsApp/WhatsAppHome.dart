@@ -15,6 +15,7 @@ class _WhatsAppHome extends State<WhatsAppHome> {
       length: 4,
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Colors.green,
           title: Align(
               alignment: Alignment.topLeft,
@@ -22,7 +23,7 @@ class _WhatsAppHome extends State<WhatsAppHome> {
                 'WhatsApp',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               )),
-          actions: <Widget>[
+          actions: [
             IconButton(
               icon: Icon(
                 Icons.search,
@@ -87,8 +88,9 @@ class _WhatsAppHome extends State<WhatsAppHome> {
                 })
           ],
           bottom: TabBar(
+            isScrollable: true,
             indicatorColor: Colors.white,
-            tabs: <Widget>[
+            tabs: [
               Tab(
                 icon: IconButton(
                   icon: Icon(Icons.camera_alt),
