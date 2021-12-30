@@ -15,58 +15,71 @@ class _WhatsAppStatusState extends State<WhatsAppStatus> {
       body: ListView.separated(
           separatorBuilder: (context, index) => Divider(),
           itemBuilder: (context, index) {
-            print(index);
-            return Container(
-                color: Colors.grey[100],
-                height: 80,
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Container(
-                      width: 60,
-                      height: 60,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30)),
-                      child: CircleAvatar(
-                        radius: 30.0,
-                        backgroundImage:
-                            NetworkImage('https://via.placeholder.com/150'),
-                        backgroundColor: Colors.lightBlueAccent,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+            return (index == 0)
+                ? Container(
+                    color: Colors.grey[100],
+                    height: 80,
+                    child: Row(
                       children: [
                         SizedBox(
-                          height: 20,
+                          width: 10,
                         ),
-                        (index == 0)
-                            ? Text(
-                                "My status",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 16),
-                              )
-                            : Container(),
+                        Stack(
+                          children: [
+                            Container(
+                              width: 60,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30)),
+                              child: CircleAvatar(
+                                radius: 30.0,
+                                backgroundImage: NetworkImage(
+                                    'https://via.placeholder.com/150'),
+                                backgroundColor: Colors.lightBlueAccent,
+                              ),
+                            ),
+                            Positioned(
+                              bottom: 0,
+                              right: 0,
+                              child: Container(
+                                  width: 30,
+                                  height: 30,
+                                  decoration: BoxDecoration(
+                                      color: Colors.green,
+                                      borderRadius: BorderRadius.circular(15),
+                                      border: Border.all(
+                                          color: Colors.white, width: 1)),
+                                  child: Icon(Icons.add, color: Colors.white)),
+                            )
+                          ],
+                        ),
                         SizedBox(
-                          height: 6,
+                          width: 10,
                         ),
-                        (index == 0)
-                            ? Text(
-                                "Tap to add status update",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 16),
-                              )
-                            : Container(),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              "My status",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 16),
+                            ),
+                            SizedBox(
+                              height: 6,
+                            ),
+                            Text(
+                              "Tap to add status update",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.normal, fontSize: 16),
+                            ),
+                          ],
+                        ),
                       ],
-                    ),
-                  ],
-                ));
+                    ))
+                : Container();
           },
           itemCount: 1),
       floatingActionButton: Column(
