@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/WhatsApp/chatConversation.dart';
+import 'package:my_app/WhatsApp/createnewchat.dart';
 
 class WhatsAppChat extends StatefulWidget {
   const WhatsAppChat({Key key}) : super(key: key);
@@ -68,7 +69,10 @@ class _WhatsAppChatState extends State<WhatsAppChat> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.message),
         backgroundColor: Colors.green,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => CreateNewChat()));
+        },
       ),
     );
   }
