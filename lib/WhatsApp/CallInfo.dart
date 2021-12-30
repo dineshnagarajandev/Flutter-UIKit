@@ -27,7 +27,7 @@ class CallInfo extends StatelessWidget {
           ],
         ),
         body: Padding(
-          padding: EdgeInsets.all(2),
+          padding: EdgeInsets.all(8),
           child: Container(
             child: Column(
               children: <Widget>[
@@ -77,40 +77,49 @@ class CallInfo extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                  child: ListView.builder(
-                      itemCount: 20,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Container(
-                          padding: EdgeInsets.all(8),
-                          height: 60,
-                          child: Row(
-                            children: <Widget>[
-                              Container(
-                                width: 60,
-                                height: 60,
-                                child: Center(
-                                  child: Icon(Icons.call_made, color: Colors.green,)
+                    child: ListView.builder(
+                        itemCount: 20,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Container(
+                            padding: EdgeInsets.all(8),
+                            height: 60,
+                            child: Row(
+                              children: <Widget>[
+                                Container(
+                                  width: 60,
+                                  height: 60,
+                                  child: Center(
+                                      child: Icon(
+                                    Icons.call_made,
+                                    color: Colors.green,
+                                  )),
                                 ),
-                              ),
-                              Expanded(
-                                child: Container(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Text('Outgoing'),
-                                      Text('12:00 AM', style: TextStyle(color: Colors.grey),)
-                                    ],
+                                Expanded(
+                                  child: Container(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        Text('Outgoing'),
+                                        Text(
+                                          '12:00 AM',
+                                          style: TextStyle(color: Colors.grey),
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Text('Unavailable', style: TextStyle(color: Colors.grey),)
-                            ],
-                          ),
-                        );
-                      }),
-                ),
+                                Text(
+                                  'Unavailable',
+                                  style: TextStyle(color: Colors.grey),
+                                )
+                              ],
+                            ),
+                          );
+                        }),
+                  ),
                 )
               ],
             ),
