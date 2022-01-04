@@ -109,124 +109,191 @@ class _ContactInfoState extends State<ContactInfo> {
               Divider(),
               listComponentWithImage(
                   Icons.image, Colors.blue, "Media, Links, and Docs",
-                  subTitle: "None"),
+                  subTitle: "None", handler: mediaLinkDocHandler),
               listComponentWithImage(
-                  Icons.star, Colors.yellow[700], "Media, Links, and Docs",
-                  subTitle: "None"),
-              listComponentWithImage(
-                Icons.search,
-                Colors.orange,
-                "Chat Search",
-              ),
+                  Icons.star, Colors.yellow[700], "Starred Messages",
+                  subTitle: "None", handler: starredMessagesHander),
+              listComponentWithImage(Icons.search, Colors.orange, "Chat Search",
+                  handler: chatSearchHandler),
               customGreySpacer(),
               listComponentWithImage(Icons.volume_up, Colors.green, "Mute",
-                  subTitle: "No"),
+                  subTitle: "No", handler: muteHandler),
               listComponentWithImage(
                   Icons.wallpaper, Colors.pink[400], "Wallpaper & Sound",
-                  subTitle: ""),
+                  handler: wallpaperSoundHandler),
               listComponentWithImage(
                   Icons.download, Colors.yellow[700], "Save to Camera Roll",
-                  subTitle: "Default"),
+                  subTitle: "Default", handler: saveToCameraRollHandler),
               customGreySpacer(),
               listComponentWithImage(
                   Icons.timer, Colors.blue[700], "Disappearing Messages",
-                  subTitle: "Off"),
+                  subTitle: "Off", handler: disappearingMessagesHandler),
               listComponentWithImage(Icons.lock, Colors.blue[700], "Encryption",
                   title2:
-                      "Messages and calls are end-to-end encrypted. \nTap to verify."),
+                      "Messages and calls are end-to-end encrypted. \nTap to verify.",
+                  handler: encryptionHandler),
               customGreySpacer(),
               listComponentWithImage(
-                  Icons.person, Colors.grey, "Contact Details"),
+                  Icons.person, Colors.grey, "Contact Details",
+                  handler: contactDetailsHandler),
               customGreySpacer(),
-              listComponentOnlyText("Share Contact", Colors.blue),
-              listComponentOnlyText("Export Chat", Colors.blue),
-              listComponentOnlyText("Clear Chat", Colors.red),
+              listComponentOnlyText("Share Contact", Colors.blue,
+                  handler: shareContactHandler),
+              listComponentOnlyText("Export Chat", Colors.blue,
+                  handler: exportChatHandler),
+              listComponentOnlyText("Clear Chat", Colors.red,
+                  handler: clearChatHandler),
               customGreySpacer(),
-              listComponentOnlyText("Block Contact", Colors.red),
-              listComponentOnlyText("Report Contact", Colors.red),
+              listComponentOnlyText("Block Contact", Colors.red,
+                  handler: blockContactHandler),
+              listComponentOnlyText("Report Contact", Colors.red,
+                  handler: reportContactHandler),
               customGreySpacer(),
             ])));
   }
 
-  Widget listComponentOnlyText(String title, Color titleColor) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: TextStyle(fontSize: 16, color: titleColor),
-          ),
-          Divider()
-        ],
+  mediaLinkDocHandler() {
+    print("Media link document handler");
+  }
+
+  starredMessagesHander() {
+    print("Starred messages handler");
+  }
+
+  chatSearchHandler() {
+    print("Chat search handler");
+  }
+
+  muteHandler() {
+    print("Mute handler");
+  }
+
+  wallpaperSoundHandler() {
+    print("Wallpaper and sound handler");
+  }
+
+  saveToCameraRollHandler() {
+    print("Save to camera roll handler");
+  }
+
+  disappearingMessagesHandler() {
+    print("Disappearing messages handler");
+  }
+
+  encryptionHandler() {
+    print("Encryption handler");
+  }
+
+  contactDetailsHandler() {
+    print("Contact details handler");
+  }
+
+  shareContactHandler() {
+    print("Share contact handler");
+  }
+
+  exportChatHandler() {
+    print("Export chat handler");
+  }
+
+  clearChatHandler() {
+    print("Clear chat handler");
+  }
+
+  blockContactHandler() {
+    print("Block contact handler");
+  }
+
+  reportContactHandler() {
+    print("Report contact handler");
+  }
+
+  Widget listComponentOnlyText(String title, Color titleColor,
+      {Function handler}) {
+    return InkWell(
+      onTap: (handler != null) ? handler : null,
+      child: Padding(
+        padding: const EdgeInsets.only(left: 16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              style: TextStyle(fontSize: 16, color: titleColor),
+            ),
+            Divider()
+          ],
+        ),
       ),
     );
   }
 
   Widget listComponentWithImage(IconData image, Color imageColor, String title,
-      {String subTitle, String title2}) {
-    return Column(
-      children: [
-        Row(
-          children: [
-            SizedBox(
-              width: 16,
-            ),
-            Container(
-              width: 30,
-              height: 30,
-              decoration: BoxDecoration(
-                  color: imageColor, borderRadius: BorderRadius.circular(6)),
-              child: Icon(
-                image,
-                color: Colors.white,
+      {String subTitle, String title2, Function handler}) {
+    return InkWell(
+      onTap: (handler != null) ? handler : null,
+      child: Column(
+        children: [
+          Row(
+            children: [
+              SizedBox(
+                width: 16,
               ),
-            ),
-            SizedBox(
-              width: 16,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-                ),
-                (title2 != null)
-                    ? Text(
-                        title2,
-                        maxLines: 2,
-                      )
-                    : Container(),
-              ],
-            ),
-            Spacer(),
-            (subTitle != null)
-                ? Text(
-                    subTitle,
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16,
-                    ),
-                  )
-                : Container(),
-            SizedBox(
-              width: 8,
-            ),
-            SizedBox(
+              Container(
+                width: 30,
+                height: 30,
+                decoration: BoxDecoration(
+                    color: imageColor, borderRadius: BorderRadius.circular(6)),
                 child: Icon(
-              Icons.arrow_forward_ios,
-              size: 15,
-              color: Colors.grey,
-            )),
-            SizedBox(
-              width: 16,
-            )
-          ],
-        ),
-        Divider()
-      ],
+                  image,
+                  color: Colors.white,
+                ),
+              ),
+              SizedBox(
+                width: 16,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                  ),
+                  (title2 != null)
+                      ? Text(
+                          title2,
+                          maxLines: 2,
+                        )
+                      : Container(),
+                ],
+              ),
+              Spacer(),
+              (subTitle != null)
+                  ? Text(
+                      subTitle,
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 16,
+                      ),
+                    )
+                  : Container(),
+              SizedBox(
+                width: 8,
+              ),
+              SizedBox(
+                  child: Icon(
+                Icons.arrow_forward_ios,
+                size: 15,
+                color: Colors.grey,
+              )),
+              SizedBox(
+                width: 16,
+              )
+            ],
+          ),
+          Divider()
+        ],
+      ),
     );
   }
 
