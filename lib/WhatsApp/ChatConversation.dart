@@ -10,6 +10,7 @@ class ChatConversation extends StatefulWidget {
 
 class _ChatConversationState extends State<ChatConversation> {
   ScrollController chatListViewController = ScrollController();
+  TextEditingController chatTextFieldController = TextEditingController();
 
   @override
   void initState() {
@@ -64,25 +65,118 @@ class _ChatConversationState extends State<ChatConversation> {
             ),
           ],
         ),
-        body: Center(
-          child: Container(
-            color: Colors.grey[300],
-            child: ListView.separated(
-                controller: chatListViewController,
-                separatorBuilder: (context, index) {
-                  return Container(
-                    color: Colors.transparent,
-                    height: 8,
-                  );
-                },
-                itemCount: 100,
-                itemBuilder: (context, index) {
-                  return (index % 2 == 0)
-                      ? sentMessage(context)
-                      : receivedMessage(context);
-                }),
+        body: Stack(children: [
+          Padding(
+            padding: const EdgeInsets.only(bottom: 80),
+            child: Container(
+              color: Colors.grey[300],
+              child: ListView.separated(
+                  controller: chatListViewController,
+                  separatorBuilder: (context, index) {
+                    return Container(
+                      color: Colors.transparent,
+                      height: 8,
+                    );
+                  },
+                  itemCount: 20,
+                  itemBuilder: (context, index) {
+                    return (index % 2 == 0)
+                        ? sentMessage(context)
+                        : receivedMessage(context);
+                  }),
+            ),
           ),
-        ));
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              height: 80,
+              decoration: BoxDecoration(color: Colors.grey[200]),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 16,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      print("Add media");
+                    },
+                    child: Container(
+                      height: 30,
+                      width: 30,
+                      decoration: BoxDecoration(color: Colors.transparent),
+                      child: Icon(
+                        Icons.add,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                      child: TextField(
+                    controller: chatTextFieldController,
+                    onChanged: (value) {
+                      print(value);
+                      setState(() {});
+                    },
+                  )),
+                  (chatTextFieldController.text.isEmpty)
+                      ? InkWell(
+                          onTap: () {
+                            print("Add media");
+                          },
+                          child: Container(
+                            height: 30,
+                            width: 30,
+                            decoration:
+                                BoxDecoration(color: Colors.transparent),
+                            child: Icon(
+                              Icons.money_outlined,
+                              color: Colors.blue,
+                            ),
+                          ),
+                        )
+                      : Container(),
+                  (chatTextFieldController.text.isEmpty)
+                      ? InkWell(
+                          onTap: () {
+                            print("Add media");
+                          },
+                          child: Container(
+                            height: 30,
+                            width: 30,
+                            decoration:
+                                BoxDecoration(color: Colors.transparent),
+                            child: Icon(
+                              Icons.camera_alt_outlined,
+                              color: Colors.blue,
+                            ),
+                          ),
+                        )
+                      : Container(),
+                  (chatTextFieldController.text.isEmpty)
+                      ? InkWell(
+                          onTap: () {
+                            print("Add audio");
+                          },
+                          child: Container(
+                            height: 30,
+                            width: 30,
+                            decoration:
+                                BoxDecoration(color: Colors.transparent),
+                            child: Icon(
+                              Icons.mic,
+                              color: Colors.blue,
+                            ),
+                          ),
+                        )
+                      : Container(),
+                  SizedBox(
+                    width: 16,
+                  )
+                ],
+              ),
+            ),
+          )
+        ]));
   }
 
   Widget sentMessage(context) {
