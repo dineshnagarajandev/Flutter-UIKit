@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/WhatsApp/contactinfo.dart';
 
 class CallInfo extends StatelessWidget {
   @override
@@ -37,27 +38,44 @@ class CallInfo extends StatelessWidget {
                   height: 80,
                   child: Row(
                     children: <Widget>[
-                      CircleAvatar(
-                        backgroundImage:
-                            NetworkImage('https://via.placeholder.com/150'),
-                        radius: 30,
-                      ),
-                      Expanded(
+                      InkWell(
+                        onTap: () {
+                          print('Call');
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ContactInfo()));
+                        },
                         child: Container(
-                          padding: EdgeInsets.all(8),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text('User Name'),
-                              Text(
-                                'Hey there! I am using WhatsApp',
-                                style: TextStyle(color: Colors.grey),
-                              )
+                          child: Row(
+                            children: [
+                              CircleAvatar(
+                                backgroundImage: NetworkImage(
+                                    'https://via.placeholder.com/150'),
+                                radius: 30,
+                              ),
+                              // Expanded(
+                              // child:
+                              Container(
+                                padding: EdgeInsets.all(8),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Text('User Name'),
+                                    Text(
+                                      'Hey there! I am using WhatsApp',
+                                      style: TextStyle(color: Colors.grey),
+                                    )
+                                  ],
+                                ),
+                              ),
+                              // ),
                             ],
                           ),
                         ),
                       ),
+                      Spacer(),
                       IconButton(
                         icon: Icon(Icons.call),
                         color: Colors.green,

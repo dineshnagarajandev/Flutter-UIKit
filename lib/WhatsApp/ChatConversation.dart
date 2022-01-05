@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:my_app/WhatsApp/contactinfo.dart';
 
 class ChatConversation extends StatefulWidget {
   const ChatConversation({Key key}) : super(key: key);
@@ -39,6 +40,8 @@ class _ChatConversationState extends State<ChatConversation> {
                   child: Text('User Name'),
                   onTap: () {
                     print('User Name tapped');
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ContactInfo()));
                   },
                 ),
               ],

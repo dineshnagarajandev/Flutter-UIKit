@@ -40,6 +40,7 @@ class _WhatsAppCallState extends State<WhatsAppCall> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 16),
                           ),
+                          SizedBox(height: 8),
                           Text(
                             'Call time',
                             style: TextStyle(

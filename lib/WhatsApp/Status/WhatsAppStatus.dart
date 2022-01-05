@@ -114,7 +114,7 @@ class _WhatsAppStatusState extends State<WhatsAppStatus> {
                                   fontWeight: FontWeight.bold, fontSize: 16),
                             ),
                             SizedBox(
-                              height: 6,
+                              height: 8,
                             ),
                             Text(
                               "10 minutes ago",
