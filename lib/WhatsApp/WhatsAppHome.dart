@@ -105,7 +105,7 @@ class _WhatsAppHome extends State<WhatsAppHome> with TickerProviderStateMixin {
           ],
           bottom: TabBar(
             controller: _tabController,
-            isScrollable: true,
+            isScrollable: false,
             indicatorColor: Colors.white,
             tabs: [
               Tab(
