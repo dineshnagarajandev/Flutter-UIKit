@@ -70,23 +70,26 @@ class _AppBarClass extends State<AppBarClass> {
 
   _setAppBarHeader(int index) {
     switch (index) {
-      case 0: {
-        // Home
-        return Text('Home');
-      }
-      break;
-      case 1: {
-        // Alarm
-        return Text('Alarm');
-      }
-      break;
-      case 2: {
-        // Setting
-        return Text('Setting');
-      }
-      break;
+      case 0:
+        {
+          // Home
+          return Text('Home');
+        }
+        break;
+      case 1:
+        {
+          // Alarm
+          return Text('Alarm');
+        }
+        break;
+      case 2:
+        {
+          // Setting
+          return Text('Setting');
+        }
+        break;
       default:
-      break;
+        break;
     }
   }
 
@@ -100,11 +103,10 @@ class _AppBarClass extends State<AppBarClass> {
       body: Center(child: _widgetOptions.elementAt(_selectedIndex)),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.access_alarms), title: Text('Alarm')),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.settings), title: Text('About'))
+              icon: Icon(Icons.access_alarms), label: 'Alarm'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'About')
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.blue[800],
