@@ -20,22 +20,21 @@ class FormComponent extends StatelessWidget {
             ),
             TextFormField(
               decoration: InputDecoration(
-                border: InputBorder.none,
-                icon: Icon(Icons.lock),
-                hintText: 'Enter password'
-              ),
+                  border: InputBorder.none,
+                  icon: Icon(Icons.lock),
+                  hintText: 'Enter password'),
             ),
             Container(
               padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
               alignment: Alignment.center,
-              child: 
-              // AbsorbPointer(
-                // child: 
-                RaisedButton(
+              child:
+                  // AbsorbPointer(
+                  // child:
+                  InkWell(
                 child: Text('Login'),
-                onPressed: loginAction,
-            ),
-              // ) 
+                onTap: loginAction,
+              ),
+              // )
             )
           ],
         ),

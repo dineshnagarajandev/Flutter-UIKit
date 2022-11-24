@@ -147,8 +147,8 @@ void flutterBasicListViewTapped(
       Navigator.pushNamed(context, '/WhatsAppHome');
       break;
     default:
-      Scaffold.of(context)
-          .showSnackBar(SnackBar(content: Text("Default case")));
+      // Scaffold.of(context)
+      // .showSnackBar(SnackBar(content: Text("Default case")));
       break;
   }
 }
@@ -178,15 +178,15 @@ _materialAlert(BuildContext context) {
     title: Text('Material Alert'),
     content: Text('Android material designa alert'),
     actions: <Widget>[
-      FlatButton(
+      InkWell(
         child: Text('Yes'),
-        onPressed: () {
+        onTap: () {
           Navigator.pop(context);
         },
       ),
-      FlatButton(
+      InkWell(
         child: Text('No'),
-        onPressed: () {
+        onTap: () {
           Navigator.pop(context);
         },
       )
