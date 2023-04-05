@@ -15,6 +15,7 @@ import 'CustomWidgets/alignclass.dart';
 import 'CustomWidgets/scafordcomponent.dart';
 import 'CustomWidgets/appbarclass.dart';
 
+import 'CustomWidgets/textfields.dart';
 import 'WhatsApp/WhatsAppHome.dart';
 
 void main() => runApp(MyApp());
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
   final List<String> widgetNameArray = <String>[
     'Text',
     'Button',
+    'Text Fields',
     'Row',
     'Coloumn',
     'Stack',
@@ -81,6 +83,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/TextComponent": (context) => TextComponent(),
         "/Buttons": (context) => const Buttons(),
+        "/TextFields": (context) => const TextFields(),
         "/RowComponent": (context) => RowComponent(),
         "/ColoumComponent": (context) => ColoumComponent(),
         "/StackComponent": (context) => StackComponent(),
@@ -111,46 +114,50 @@ void flutterBasicListViewTapped(
       Navigator.pushNamed(context, '/Buttons');
       break;
     case 2:
+      // Text Fields
+      Navigator.pushNamed(context, "/TextFields");
+      break;
+    case 3:
       // Row component
       Navigator.pushNamed(context, '/RowComponent');
       break;
-    case 3:
+    case 4:
       // Column component
       Navigator.pushNamed(context, '/ColoumComponent');
       break;
-    case 4:
+    case 5:
       // Stack component
       Navigator.pushNamed(context, '/StackComponent');
       break;
-    case 5:
+    case 6:
       // Container component
       Navigator.pushNamed(context, '/ContainerComponent');
       break;
-    case 6:
+    case 7:
       // Horizontal List View
       Navigator.pushNamed(context, '/HorizontalListViewComponents');
       break;
-    case 7:
+    case 8:
       // Form component
       Navigator.pushNamed(context, '/FormComponent');
       break;
-    case 8:
+    case 9:
       // API component
       Navigator.pushNamed(context, '/ListViewWithAPI');
       break;
-    case 9:
+    case 10:
       _iOSAlertInit(context);
       break;
-    case 10:
+    case 11:
       _materialAlertInit(context);
       break;
-    case 11:
+    case 12:
       Navigator.pushNamed(context, '/AlignClass');
       break;
-    case 12:
+    case 13:
       Navigator.pushNamed(context, '/AppBarClass');
       break;
-    case 13:
+    case 14:
       Navigator.pushNamed(context, '/WhatsAppHome');
       break;
     default:
