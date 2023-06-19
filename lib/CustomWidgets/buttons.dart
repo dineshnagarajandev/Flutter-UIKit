@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Buttons extends StatelessWidget {
-  const Buttons({Key key}) : super(key: key);
+  const Buttons({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class Buttons extends StatelessWidget {
                   foregroundColor:
                       MaterialStateProperty.all<Color>(Colors.black),
                   backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.grey[200])),
+                      MaterialStateProperty.all<Color>(Colors.grey[200]!)),
               onPressed: () {
                 print("Text Button Tapped");
               },

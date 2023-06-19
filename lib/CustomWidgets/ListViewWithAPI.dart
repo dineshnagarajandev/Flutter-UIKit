@@ -23,7 +23,7 @@ class _MyListWithAPIBodyWidget extends StatefulWidget {
 }
 
 class _MyListState extends State {
-  var user = List<User>();
+  List<User> user = [];
 
   @override
   void initState() {
@@ -41,9 +41,10 @@ class _MyListState extends State {
     return ListView.builder(
       itemCount: user.length,
       itemBuilder: (context, index) {
-        return ListTile(title: Text(user[index].name),);
+        return ListTile(
+          title: Text(user[index].name ?? ''),
+        );
       },
-      
     );
   }
 

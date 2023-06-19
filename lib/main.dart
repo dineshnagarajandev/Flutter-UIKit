@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/CustomWidgets/buttons.dart';
-import 'package:my_app/WhatsApp/CallInfo.dart';
-
 import 'CustomWidgets/textcomponent.dart';
 import 'CustomWidgets/rowcomponent.dart';
 import 'CustomWidgets/coloumcomponent.dart';
@@ -14,14 +12,12 @@ import 'CustomWidgets/ListViewWithAPI.dart';
 import 'CustomWidgets/alignclass.dart';
 import 'CustomWidgets/scafordcomponent.dart';
 import 'CustomWidgets/appbarclass.dart';
-
 import 'CustomWidgets/textfields.dart';
-import 'WhatsApp/WhatsAppHome.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  MyApp({Key key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   final List<String> widgetNameArray = <String>[
     'Text',
@@ -95,8 +91,6 @@ class MyApp extends StatelessWidget {
         "/ListViewWithAPI": (context) => ListViewWithAPI(),
         "/AlignClass": (context) => AlignClass(),
         "/AppBarClass": (context) => AppBarClass(),
-        "/WhatsAppHome": (context) => WhatsAppHome(),
-        "/CallInfo": (context) => CallInfo()
       },
     );
   }
