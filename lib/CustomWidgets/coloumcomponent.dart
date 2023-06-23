@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ColoumComponent extends StatelessWidget {
+class ColumComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,13 +10,21 @@ class ColoumComponent extends StatelessWidget {
       body: Column(
         children: <Widget>[
           Expanded(
-            child: Text('Coloum one string', textAlign: TextAlign.center,)
+              child: Text(
+            'Colum one string',
+            textAlign: TextAlign.center,
+          )),
+          Expanded(
+            child: Text(
+              'Colum two string',
+              textAlign: TextAlign.center,
+            ),
           ),
           Expanded(
-            child: Text('Coloum two string', textAlign: TextAlign.center,),
-          ),
-          Expanded(
-            child: Text('Coloum three string', textAlign: TextAlign.center,),
+            child: Text(
+              'Colum three string',
+              textAlign: TextAlign.center,
+            ),
           ),
           Expanded(
             child: FittedBox(

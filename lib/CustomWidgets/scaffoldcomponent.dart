@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ScafordComponent extends StatelessWidget {
+class ScaffoldComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

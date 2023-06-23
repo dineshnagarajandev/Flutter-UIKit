@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/CustomWidgets/bottom_appbar_widget.dart';
 import 'package:my_app/CustomWidgets/buttons.dart';
 import 'CustomWidgets/textcomponent.dart';
 import 'CustomWidgets/rowcomponent.dart';
@@ -10,7 +11,7 @@ import 'CustomWidgets/horizontal_listview_components.dart';
 import 'CustomWidgets/formcomponent.dart';
 import 'CustomWidgets/ListViewWithAPI.dart';
 import 'CustomWidgets/alignclass.dart';
-import 'CustomWidgets/scafordcomponent.dart';
+import 'CustomWidgets/scaffoldcomponent.dart';
 import 'CustomWidgets/appbarclass.dart';
 import 'CustomWidgets/textfields.dart';
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
     'Button',
     'Text Fields',
     'Row',
-    'Coloumn',
+    'Column',
     'Stack',
     'Container',
     'Horizontal ListView',
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
     'Material AlertDialog',
     'Align Widget',
     'AppBar',
-    'Whats App'
+    'Bottom App Bar'
   ];
 
   @override
@@ -81,16 +82,17 @@ class MyApp extends StatelessWidget {
         "/Buttons": (context) => const Buttons(),
         "/TextFields": (context) => const TextFields(),
         "/RowComponent": (context) => RowComponent(),
-        "/ColoumComponent": (context) => ColoumComponent(),
+        "/ColumComponent": (context) => ColumComponent(),
         "/StackComponent": (context) => StackComponent(),
         "/ContainerComponent": (context) => ContainerComponent(),
         "/FormComponent": (context) => FormComponent(),
-        "/ScafordComponents": (context) => ScafordComponent(),
+        "/ScaffoldComponents": (context) => ScaffoldComponent(),
         "/HorizontalListViewComponents": (context) =>
             HorizontalListViewComponent(),
         "/ListViewWithAPI": (context) => ListViewWithAPI(),
         "/AlignClass": (context) => AlignClass(),
         "/AppBarClass": (context) => AppBarClass(),
+        '/BottomAppBarWidget': (context) => const BottomAppBarWidget()
       },
     );
   }
@@ -152,7 +154,7 @@ void flutterBasicListViewTapped(
       Navigator.pushNamed(context, '/AppBarClass');
       break;
     case 14:
-      Navigator.pushNamed(context, '/WhatsAppHome');
+      Navigator.pushNamed(context, '/BottomAppBarWidget');
       break;
     default:
       // Scaffold.of(context)
