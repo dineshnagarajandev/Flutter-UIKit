@@ -4,7 +4,7 @@ import 'package:my_app/CustomWidgets/bottom_appbar_widget.dart';
 import 'package:my_app/CustomWidgets/buttons.dart';
 import 'CustomWidgets/textcomponent.dart';
 import 'CustomWidgets/rowcomponent.dart';
-import 'CustomWidgets/coloumcomponent.dart';
+import 'CustomWidgets/columncomponent.dart';
 import 'CustomWidgets/stackcomponent.dart';
 import 'CustomWidgets/containercomponent.dart';
 import 'CustomWidgets/horizontal_listview_components.dart';

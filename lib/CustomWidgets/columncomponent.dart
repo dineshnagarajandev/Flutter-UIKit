@@ -5,7 +5,7 @@ class ColumComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Coloum Component'),
+        title: Text('Column Component'),
       ),
       body: Column(
         children: <Widget>[
