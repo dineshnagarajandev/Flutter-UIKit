@@ -120,7 +120,7 @@ void flutterBasicListViewTapped(
       break;
     case 4:
       // Column component
-      Navigator.pushNamed(context, '/ColoumComponent');
+      Navigator.pushNamed(context, '/ColumComponent');
       break;
     case 5:
       // Stack component
