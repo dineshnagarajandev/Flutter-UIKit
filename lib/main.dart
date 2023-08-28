@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         body: ListView.separated(
-          physics: new AlwaysScrollableScrollPhysics(),
+          physics: const AlwaysScrollableScrollPhysics(),
           padding: const EdgeInsets.all(0),
           itemCount: widgetNameArray.length,
           itemBuilder: (BuildContext context, int index) {
@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
                 child: Center(
                   child: Text(
                     '${widgetNameArray[index]}',
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontWeight: FontWeight.bold, color: Colors.white),
                   ),
                 ),
@@ -75,8 +75,8 @@ class MyApp extends StatelessWidget {
             height: 5,
           ),
         ),
-        floatingActionButton:
-            FloatingActionButton(child: Icon(Icons.add), onPressed: () => {}),
+        floatingActionButton: FloatingActionButton(
+            child: const Icon(Icons.add), onPressed: () => {}),
       ),
       routes: {
         "/TextComponent": (context) => TextComponent(),
@@ -186,17 +186,17 @@ Future<void> _materialAlertInit(BuildContext context) async {
 
 _materialAlert(BuildContext context) {
   return AlertDialog(
-    title: Text('Material Alert'),
-    content: Text('Android material designa alert'),
+    title: const Text('Material Alert'),
+    content: const Text('Android material design alert'),
     actions: <Widget>[
       InkWell(
-        child: Text('Yes'),
+        child: const Text('Yes'),
         onTap: () {
           Navigator.pop(context);
         },
       ),
       InkWell(
-        child: Text('No'),
+        child: const Text('No'),
         onTap: () {
           Navigator.pop(context);
         },
@@ -209,17 +209,17 @@ _materialAlert(BuildContext context) {
 
 _iosAlert(BuildContext context) {
   return CupertinoAlertDialog(
-    title: Text('Alert'),
-    content: Text("Are you sure about this alert?"),
+    title: const Text('Alert'),
+    content: const Text("Are you sure about this alert?"),
     actions: <Widget>[
       CupertinoDialogAction(
-        child: Text("No"),
+        child: const Text("No"),
         onPressed: () {
           Navigator.pop(context);
         },
       ),
       CupertinoDialogAction(
-        child: Text("Yes"),
+        child: const Text("Yes"),
         onPressed: () {
           Navigator.pop(context);
         },
