@@ -45,8 +45,8 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text(
-            'Flutter Basic',
+          title: const Text(
+            'Flutter UIKit',
           ),
         ),
         body: ListView.separated(
